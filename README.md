@@ -1,62 +1,65 @@
-<p align="center">
-  <a href="https://roots.io/bedrock/">
-    <img alt="Bedrock" src="https://cdn.roots.io/app/uploads/logo-bedrock.svg" height="100">
-  </a>
-</p>
+# Wordpress based website
 
-<p align="center">
-  <a href="https://packagist.org/packages/roots/bedrock">
-    <img alt="Packagist Installs" src="https://img.shields.io/packagist/dt/roots/bedrock?label=projects%20created&colorB=2b3072&colorA=525ddc&style=flat-square">
-  </a>
-
-  <a href="https://packagist.org/packages/roots/wordpress">
-    <img alt="roots/wordpress Packagist Downloads" src="https://img.shields.io/packagist/dt/roots/wordpress?label=roots%2Fwordpress%20downloads&logo=roots&logoColor=white&colorB=2b3072&colorA=525ddc&style=flat-square">
-  </a>
-  
-  <img src="https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/roots/bedrock/master/composer.json&label=wordpress&logo=roots&logoColor=white&query=$.require[%22roots/wordpress%22]&colorB=2b3072&colorA=525ddc&style=flat-square">
-
-  <a href="https://github.com/roots/bedrock/actions/workflows/ci.yml">
-    <img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/roots/bedrock/ci.yml?branch=master&logo=github&label=CI&style=flat-square">
-  </a>
-
-  <a href="https://twitter.com/rootswp">
-    <img alt="Follow Roots" src="https://img.shields.io/badge/follow%20@rootswp-1da1f2?logo=twitter&logoColor=ffffff&message=&style=flat-square">
-  </a>
-</p>
-
-<p align="center">WordPress boilerplate with Composer, easier configuration, and an improved folder structure</p>
-
-<p align="center">
-  <a href="https://roots.io/bedrock/">Website</a> &nbsp;&nbsp; <a href="https://roots.io/bedrock/docs/installation/">Documentation</a> &nbsp;&nbsp; <a href="https://github.com/roots/bedrock/releases">Releases</a> &nbsp;&nbsp; <a href="https://discourse.roots.io/">Community</a>
-</p>
-
-## Sponsors
-
-Bedrock is an open source project and completely free to use. If you've benefited from our projects and would like to support our future endeavors, please consider [sponsoring Roots](https://github.com/sponsors/roots).
-
-<div align="center">
-<a href="https://carrot.com/"><img src="https://cdn.roots.io/app/uploads/carrot.svg" alt="Carrot" width="120" height="90"></a> <a href="https://wordpress.com/"><img src="https://cdn.roots.io/app/uploads/wordpress.svg" alt="WordPress.com" width="120" height="90"></a> <a href="https://worksitesafety.ca/careers/"><img src="https://cdn.roots.io/app/uploads/worksite-safety.svg" alt="Worksite Safety" width="120" height="90"></a> <a href="https://www.itineris.co.uk/"><img src="https://cdn.roots.io/app/uploads/itineris.svg" alt="Itineris" width="120" height="90"></a> <a href="https://bonsai.so/"><img src="https://cdn.roots.io/app/uploads/bonsai.svg" alt="Bonsai" width="120" height="90"></a>
-</div>
+## Table of Contents
+- [Overview](#overview)
+- [Theme Status](#theme-status)
+- [Contributors](#contributors)
+- [Theme features](#theme-features)
+- [Technical details](#technical-details)
+- [Wordpress plugin dependencies](#wordpress-plugin-dependencies)
+- [Development dependencies](#development-dependencies)
+- [Development process](#development-process)
+- [Hosting](#hosting)
+- [Changelog](#changelog)
 
 ## Overview
+Custom website based on [Root's Ecosystem](https://roots.io/) for easy development and deployment: from local dev, staging and production environments. All backed by a well estabished and maintained community ecosystem. 
 
-Bedrock is a WordPress boilerplate for developers that want to manage their projects with Git and Composer. Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology, including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
+The website has zero paid dependencies (themes, plugins, font libraries, or services) with exception of hosting and 3rd party marketing tools.
 
-- Better folder structure
-- Dependency management with [Composer](https://getcomposer.org)
-- Easy WordPress configuration with environment specific files
-- Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
-- Autoloader for mu-plugins (use regular plugins as mu-plugins)
-- Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
+Theme fully documented and code reposiotory hosted for easy developer hand-off to **ensure that the client "owns" the code for their website**.
 
-## Getting Started
+## Status
+  ### Origin = March 2024
+  Establish the development infrastructure for a Wordpress based website with a custom theme - all based on the Roots ecosystem.
 
-See the [Bedrock installation documentation](https://roots.io/bedrock/docs/installation/).
+## Contributors
+  - Design: [Smidge Design Studio - GG LeMere](https://www.smidgedesignstudio.com/)
+  - Development: [130public - Jason Geiger](https://130public.net)
 
-## Stay Connected
+### Admin experience
+Reference [admin experience](dev/screenshots/admin.md) documentation to review website customization.
 
-- Join us on Discord by [sponsoring us on GitHub](https://github.com/sponsors/roots)
-- Participate on [Roots Discourse](https://discourse.roots.io/)
-- Follow [@rootswp on Twitter](https://twitter.com/rootswp)
-- Read the [Roots Blog](https://roots.io/blog/)
-- Subscribe to the [Roots Newsletter](https://roots.io/newsletter/)
+## Technical details
+  - Build process...
+
+### Build process - need a script to deploy
+  - Ensure requirements are met - PHP, Nginx, MySQL, Node
+  - Create a database, user, pass
+  - Create env file or service equivant
+  - Nginx config target repo `web/`
+  - Clone this repo
+  - Run composer install in repo directory
+  - Navigate to 'web/app/themes/ps2_theme'
+  - Run composer install
+  - Run yarn build:production
+
+(Leverage - Buddy, Docker on DigitalOcean)[https://www.digitalocean.com/community/tutorials/how-to-automate-wordpress-deployments-with-digitalocean-and-buddy]
+
+### Development dependencies
+  - Roots ecosystem
+    - Bedrock
+    - Sage
+    - Accorn
+  - Support assets
+    - Composer
+    - NPM packages
+
+### Development process
+(Wordpress theme functionality)[https://developer.wordpress.org/themes/functionality/]
+
+## Hosting
+  __Client hosted - private details__
+
+## Change log
+  ### Origin - March 2024

@@ -40,7 +40,11 @@
     "roots/wordpress": "6.7.2",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.2.0",
-    "wpackagist-theme/twentytwentyfive": "^1.0"
+    "roots/acorn": "^4.1",
+    "htmlburger/carbon-fields": "^3.6",
+    "wp-graphql/wp-graphql": "^1.28",
+    "precision-science/ps2025_theme": "dev-main",
+    "gatsbyjs/wp-gatsby": "dev-dependabot/composer/firebase/php-jwt-6.0.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
