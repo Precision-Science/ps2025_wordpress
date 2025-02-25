@@ -47,7 +47,7 @@
     - npm install
     - npm run build
     shell: BASH
-  - action: Build staging server
+  - action: Build droplet on DO
     type: DOCTL
     integration: digitalocean
     execute_commands:
