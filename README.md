@@ -20,7 +20,7 @@ The website has zero paid dependencies (themes, plugins, font libraries, or serv
 Theme fully documented and code reposiotory hosted for easy developer hand-off to **ensure that the client "owns" the code for their website**.
 
 ## Status
-  ### Origin = March 2024
+  ### Origin = February 2025
   Establish the development infrastructure for a Wordpress based website with a custom theme - all based on the Roots ecosystem.
 
 ## Contributors
@@ -62,4 +62,4 @@ Reference [admin experience](dev/screenshots/admin.md) documentation to review w
   __Client hosted - private details__
 
 ## Change log
-  ### Origin - March 2024
+  ### Origin - February 2024
