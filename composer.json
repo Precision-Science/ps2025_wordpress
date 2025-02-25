@@ -47,7 +47,7 @@
     "roots/acorn": "^4.1",
     "htmlburger/carbon-fields": "^2.2.0",
     "wp-graphql/wp-graphql": "^2.0.0",
-    "precision-science/ps2025_theme": "dev-master"
+    "precision-science/ps2025_theme": "dev-main"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
