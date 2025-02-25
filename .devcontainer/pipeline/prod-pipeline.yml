@@ -48,7 +48,7 @@
     - "npm install"
     - "npm run build"
     shell: BASH
-  - action: build staging server
+  - action: Build staging server
     type: DOCTL
     disabled: false
     integration: digitalocean
