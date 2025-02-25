@@ -59,9 +59,12 @@
     local_path: /web
     login: root
     host: ps-staging
-    env_key: secure!zo+eTWNM4pwAc/1buJ5q2w==.JYKADJdbZwhYeYYrpfVMjw==
+    env_key: secure!caIzocqmLVwq29y6P/WZkg==.fZUfEjhwl37hNICw6WoN/g==
     authentication_mode: ENV_KEY
     integration: digitalocean
+    deployment_excludes:
+    - .git
+    - node_modules/
   - action: Install dependencies and clean up nginx
     type: DOCTL
     integration: digitalocean
