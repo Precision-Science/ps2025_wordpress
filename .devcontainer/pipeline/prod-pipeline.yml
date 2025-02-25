@@ -51,7 +51,7 @@
     type: DOCTL
     integration: digitalocean
     execute_commands:
-    - "doctl compute droplet create ps-staging --size s-1vcpu-1gb --image lemp-20-04 --region nyc1 --ssh-keys ${pipeline_key} --project-id ${do_project_id} --format PublicIPv4 --enable-backups"
+    - "doctl compute droplet create ps-staging --size s-1vcpu-1gb --image lemp-20-04 --region nyc1 --ssh-keys ${do_ssh_key} --project-id ${do_project_id} --format PublicIPv4 --enable-backups"
     shell: BASH
   - action: Set TZ and clean up nginx
     type: DOCTL
