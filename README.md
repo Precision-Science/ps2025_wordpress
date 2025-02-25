@@ -42,6 +42,7 @@ Reference [admin experience](dev/screenshots/admin.md) documentation to review w
   - Run composer install in repo directory
   - Navigate to 'web/app/themes/ps2_theme'
   - Run composer install
+  - Run yarn install
   - Run yarn build:production
 
 (Leverage - Buddy, Docker on DigitalOcean)[https://www.digitalocean.com/community/tutorials/how-to-automate-wordpress-deployments-with-digitalocean-and-buddy]
@@ -62,4 +63,4 @@ Reference [admin experience](dev/screenshots/admin.md) documentation to review w
   __Client hosted - private details__
 
 ## Change log
-  ### Origin - February 2024
+  ### Origin - February 2025
