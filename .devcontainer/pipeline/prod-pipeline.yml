@@ -51,7 +51,18 @@
     type: DOCTL
     integration: digitalocean
     execute_commands:
-    - "doctl compute droplet create ps-staging --size s-1vcpu-1gb --image lemp-20-04 --region nyc1 --ssh-keys ${do_ssh_key} --project-id ${do_project_id} --format PublicIPv4 --enable-backups"
+    - "doctl compute droplet create ps-staging --size s-1vcpu-1gb --image lemp-20-04 --region nyc1 --ssh-keys ${pipeline_key} --project-id ${do_project_id} --format PublicIPv4 --enable-backups"
+    shell: BASH
+  - action: Set TZ and clean up nginx
+    type: DOCTL
+    integration: digitalocean
+    execute_commands:
+    - ln -sf /usr/share/zoneinfo/America/Phoenix /etc/localtime
+    - DEBIAN_FRONTEND=noninteractive
+    - rm -f /etc/nginx/sites-available/default
+    - rm -f /etc/nginx/sites-available/digitalocean
+    retry_interval: 15
+    retry_count: 4
     shell: BASH
   - action: Transfer to ps-staging
     type: DIGITAL_OCEAN
@@ -65,15 +76,11 @@
     deployment_excludes:
     - .git
     - node_modules/
-  - action: Install dependencies and clean up nginx
+  - action: Set up nginx
     type: DOCTL
     integration: digitalocean
     execute_commands:
-    - ln -sf /usr/share/zoneinfo/America/Phoenix /etc/localtime
-    - DEBIAN_FRONTEND=noninteractive
-    - rm -f /etc/nginx/sites-available/default
-    - rm -f /etc/nginx/sites-available/digitalocean
-    - mv /var/www/pshosting/config/nginx/pshosting /etc/sites-available/pshosting
+    - mv /var/www/pshosting/.devcontainer/config/nginx.conf /etc/sites-available/pshosting
     - ln -s /etc/sites-available/pshosting /etc/sites-enabled/pshosting
     - systemctl restart nginx
     retry_interval: 15
