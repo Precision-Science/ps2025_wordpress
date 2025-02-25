@@ -68,6 +68,7 @@
     type: DIGITAL_OCEAN
     input_type: BUILD_ARTIFACTS
     local_path: /web
+    remote_path: /var/www/pshosting
     login: root
     host: ps-staging
     env_key: secure!caIzocqmLVwq29y6P/WZkg==.fZUfEjhwl37hNICw6WoN/g==
