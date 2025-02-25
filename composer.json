@@ -30,8 +30,8 @@
       "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
     },
     {
-      "type": "git",
-      "url": "https://github.com/Precision-Science/ps2025_theme.git"
+      "type": "github",
+      "url": "https://github.com/precision-science/ps2025_theme.git"
     }
   ],
   "require": {
@@ -45,7 +45,7 @@
     "roots/wp-config": "^1.0.0",
     "roots/wp-password-bcrypt": "^1.2.0",
     "roots/acorn": "^4.1",
-    "htmlburger/carbon-fields": "^2.2.0",
+    "htmlburger/carbon-fields": "^3.6",
     "wp-graphql/wp-graphql": "^2.0.0",
     "precision-science/ps2025_theme": "dev-main"
   },
