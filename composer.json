@@ -28,6 +28,10 @@
       "type": "composer",
       "url": "https://wpackagist.org",
       "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/Precision-Science/ps2025_theme.git"
     }
   ],
   "require": {
@@ -37,14 +41,13 @@
     "oscarotero/env": "^2.1",
     "roots/bedrock-autoloader": "^1.0",
     "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/wordpress": "6.7.2",
-    "roots/wp-config": "1.0.0",
-    "roots/wp-password-bcrypt": "1.2.0",
+    "roots/wordpress": "^6.7.2",
+    "roots/wp-config": "^1.0.0",
+    "roots/wp-password-bcrypt": "^1.2.0",
     "roots/acorn": "^4.1",
-    "htmlburger/carbon-fields": "^3.65",
-    "wp-graphql/wp-graphql": "^2.00",
-    "precision-science/ps2025_theme": "master",
-    "gatsbyjs/wp-gatsby": "^v2.3.3"
+    "htmlburger/carbon-fields": "^2.2.0",
+    "wp-graphql/wp-graphql": "^2.0.0",
+    "precision-science/ps2025_theme": "dev-master"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
