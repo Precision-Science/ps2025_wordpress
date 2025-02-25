@@ -53,6 +53,16 @@
     execute_commands:
     - "doctl compute droplet create ps-staging --size s-1vcpu-1gb --image lemp-20-04 --region nyc1 --ssh-keys ${do_ssh_key} --project-id ${do_project_id} --format PublicIPv4 --enable-backups"
     shell: BASH
+  - action: Transfer to ps-staging
+    type: DIGITAL_OCEAN
+    input_type: BUILD_ARTIFACTS
+    local_path: /web/
+    remote_path: /var/www/pshosting
+    login: root
+    host: ps-staging
+    server_key: secure!aTokpY7gepM3K4SgVWeJyA==.9MPXqVZ/Un/r/Euqc5eQ4A==
+    authentication_mode: PRIVATE_KEY
+    integration: digitalocean
   - action: Set TZ and clean up nginx
     type: DOCTL
     integration: digitalocean
@@ -61,22 +71,10 @@
     - DEBIAN_FRONTEND=noninteractive
     - rm -f /etc/nginx/sites-available/default
     - rm -f /etc/nginx/sites-available/digitalocean
+    - mkdir /var/www/pshosting
     retry_interval: 15
     retry_count: 4
     shell: BASH
-  - action: Transfer to ps-staging
-    type: DIGITAL_OCEAN
-    input_type: BUILD_ARTIFACTS
-    local_path: /web
-    remote_path: /var/www/pshosting
-    login: root
-    host: ps-staging
-    env_key: secure!caIzocqmLVwq29y6P/WZkg==.fZUfEjhwl37hNICw6WoN/g==
-    authentication_mode: ENV_KEY
-    integration: digitalocean
-    deployment_excludes:
-    - .git
-    - node_modules/
   - action: Set up nginx
     type: DOCTL
     integration: digitalocean
