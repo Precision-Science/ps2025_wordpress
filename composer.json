@@ -41,10 +41,10 @@
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.2.0",
     "roots/acorn": "^4.1",
-    "htmlburger/carbon-fields": "^3.6",
-    "wp-graphql/wp-graphql": "^1.28",
-    "precision-science/ps2025_theme": "dev-main",
-    "gatsbyjs/wp-gatsby": "dev-dependabot/composer/firebase/php-jwt-6.0.0"
+    "htmlburger/carbon-fields": "^3.65",
+    "wp-graphql/wp-graphql": "^2.00",
+    "precision-science/ps2025_theme": "master",
+    "gatsbyjs/wp-gatsby": "^v2.3.3"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
