@@ -70,11 +70,15 @@
     input_type: BUILD_ARTIFACTS
     local_path: /
     remote_path: /var/www/html/precisionscience
+    ignore: 
     login: root
     host: ps-staging
     env_key: secure!aTokpY7gepM3K4SgVWeJyA==.9MPXqVZ/Un/r/Euqc5eQ4A==
     authentication_mode: ENV_KEY
     integration: digitalocean
+    deployment_excludes:
+    - /.devcontainer/
+    - /.github/
   - action: Set up nginx
     type: DOCTL
     integration: digitalocean
