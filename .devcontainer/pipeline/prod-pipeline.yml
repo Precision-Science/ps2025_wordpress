@@ -68,7 +68,7 @@
   - action: Transfer to ps-staging
     type: DIGITAL_OCEAN
     input_type: BUILD_ARTIFACTS
-    local_path: /web/
+    local_path: /
     remote_path: /var/www/html/precisionscience
     login: root
     host: ps-staging
