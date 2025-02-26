@@ -83,7 +83,7 @@
     type: DOCTL
     integration: digitalocean
     execute_commands:
-    - mv /var/www/html/precisionscience/.devcontainer/config/nginx.conf /etc/sites-available/precisionscience
+    - mv /var/www/html/precisionscience//config/nginx.conf /etc/sites-available/precisionscience
     - ln -s /etc/sites-available/precisionscience /etc/sites-enabled/precisionscience
     - systemctl restart nginx
     retry_interval: 15
