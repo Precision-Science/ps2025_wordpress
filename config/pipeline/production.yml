@@ -53,18 +53,6 @@
     execute_commands:
     - "doctl compute droplet create ps-staging --size s-1vcpu-1gb --image lemp-20-04 --region nyc1 --ssh-keys ${do_ssh_key} --project-id ${do_project_id} --format PublicIPv4 --enable-backups"
     shell: BASH
-  - action: Set TZ and clean up nginx and make host dir
-    type: DOCTL
-    integration: digitalocean
-    execute_commands:
-    - ln -sf /usr/share/zoneinfo/America/Phoenix /etc/localtime
-    - DEBIAN_FRONTEND=noninteractive
-    - rm -f /etc/nginx/sites-available/default
-    - rm -f /etc/nginx/sites-available/digitalocean
-    - mkdir -p /var/www/html/precisionscience
-    retry_interval: 45
-    retry_count: 4
-    shell: BASH
   - action: Transfer to ps-staging
     type: DIGITAL_OCEAN
     input_type: BUILD_ARTIFACTS
@@ -79,15 +67,19 @@
     deployment_excludes:
     - /.devcontainer/
     - /.github/
-    retry_interval: 45
+    retry_interval: 60
     retry_count: 4
   - action: Set up nginx
     type: DOCTL
     integration: digitalocean
     execute_commands:
-    - mv /var/www/html/precisionscience//config/nginx.conf /etc/sites-available/precisionscience
+    - ln -sf /usr/share/zoneinfo/America/Phoenix /etc/localtime
+    - DEBIAN_FRONTEND=noninteractive
+    - rm -f /etc/nginx/sites-available/default
+    - rm -f /etc/nginx/sites-available/digitalocean
+    - cp /var/www/html/precisionscience/config/nginx.conf /etc/sites-available/
     - ln -s /etc/sites-available/precisionscience /etc/sites-enabled/precisionscience
     - systemctl restart nginx
-    retry_interval: 45
+    retry_interval: 60
     retry_count: 4
     shell: BASH
