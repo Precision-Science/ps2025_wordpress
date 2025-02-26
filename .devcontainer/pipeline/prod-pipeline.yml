@@ -53,7 +53,7 @@
     execute_commands:
     - "doctl compute droplet create ps-staging --size s-1vcpu-1gb --image lemp-20-04 --region nyc1 --ssh-keys ${do_ssh_key} --project-id ${do_project_id} --format PublicIPv4 --enable-backups"
     shell: BASH
-  - action: Set TZ and clean up nginx
+  - action: Set TZ and clean up nginx and make host dir
     type: DOCTL
     integration: digitalocean
     execute_commands:
@@ -79,7 +79,7 @@
     type: DOCTL
     integration: digitalocean
     execute_commands:
-    - mv /var/www/pshosting/.devcontainer/config/nginx.conf /etc/sites-available/precisionscience
+    - mv /var/www/html/precisionscience/.devcontainer/config/nginx.conf /etc/sites-available/precisionscience
     - ln -s /etc/sites-available/precisionscience /etc/sites-enabled/precisionscience
     - systemctl restart nginx
     retry_interval: 15
