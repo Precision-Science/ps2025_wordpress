@@ -62,7 +62,7 @@
     - rm -f /etc/nginx/sites-available/default
     - rm -f /etc/nginx/sites-available/digitalocean
     - mkdir -p /var/www/html/precisionscience
-    retry_interval: 15
+    retry_interval: 45
     retry_count: 4
     shell: BASH
   - action: Transfer to ps-staging
@@ -79,6 +79,8 @@
     deployment_excludes:
     - /.devcontainer/
     - /.github/
+    retry_interval: 45
+    retry_count: 4
   - action: Set up nginx
     type: DOCTL
     integration: digitalocean
@@ -86,6 +88,6 @@
     - mv /var/www/html/precisionscience//config/nginx.conf /etc/sites-available/precisionscience
     - ln -s /etc/sites-available/precisionscience /etc/sites-enabled/precisionscience
     - systemctl restart nginx
-    retry_interval: 15
+    retry_interval: 45
     retry_count: 4
     shell: BASH
