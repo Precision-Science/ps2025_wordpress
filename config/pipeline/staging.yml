@@ -1,4 +1,4 @@
-- pipeline: PS Production
+- pipeline: PS Staging
   refs:
   - :default
   no_skip_to_most_recent: true
@@ -67,17 +67,3 @@
     - /.github/
     retry_interval: 60
     retry_count: 4
-  - action: Set up nginx
-    type: DOCTL
-    integration: digitalocean
-    execute_commands:
-    - doctl compute ssh ps-staging --ssh-key-path ${ssh_key} --ssh-command "ln -sf /usr/share/zoneinfo/America/Phoenix /etc/localtime"
-    - doctl compute ssh ps-staging --ssh-key-path ${ssh_key} --ssh-command "DEBIAN_FRONTEND=noninteractive"
-    - doctl compute ssh ps-staging --ssh-key-path ${ssh_key} --ssh-command "rm -f /etc/nginx/sites-available/default"
-    - doctl compute ssh ps-staging --ssh-key-path ${ssh_key} --ssh-command "rm -f /etc/nginx/sites-available/digitalocean"
-    - doctl compute ssh ps-staging --ssh-key-path ${ssh_key} --ssh-command "cp /var/www/html/precisionscience/config/nginx.conf /etc/nginx/sites-available/"
-    - doctl compute ssh ps-staging --ssh-key-path ${ssh_key} --ssh-command "ln -s /etc/nginx/sites-available/precisionscience /etc/nginx/sites-enabled/precisionscience"
-    - doctl compute ssh ps-staging --ssh-key-path ${ssh_key} --ssh-command "systemctl restart nginx"
-    retry_interval: 60
-    retry_count: 4
-    shell: BASH

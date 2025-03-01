@@ -33,11 +33,18 @@ Reference [admin experience](dev/screenshots/admin.md) documentation to review w
 ## Technical details
   - Build process...
 
-### Build process - need a script to deploy
-  - Ensure requirements are met - PHP, Nginx, MySQL, Node
+### Enviroment needs
+  - Ensure requirements are met - LEMP stack (Linux, Nginx, MySQL, PHP)
   - Create a database, user, pass
   - Create env file or service equivant
-  - Nginx config target repo `web/`
+  - Nginx config for the domain
+
+### Local/Pipeline build resources
+  - Composer
+  - NodeJS
+  - Yarn
+
+### Build process - need a script to deploy
   - Clone this repo
   - Run composer install in repo directory
   - Navigate to 'web/app/themes/ps2_theme'
