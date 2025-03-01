@@ -45,12 +45,6 @@
     - npm install
     - npm run build
     shell: BASH
-  - action: Build DO droplet
-    type: DOCTL
-    integration: digitalocean
-    execute_commands:
-    - "doctl compute droplet create ps-staging --size s-1vcpu-1gb --image lemp-20-04 --region nyc1 --ssh-keys ${do_ssh_key} --project-id ${do_project_id} --format PublicIPv4 --enable-backups"
-    shell: BASH
   - action: Transfer to ps-staging
     type: DIGITAL_OCEAN
     input_type: BUILD_ARTIFACTS
