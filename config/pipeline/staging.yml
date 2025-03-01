@@ -50,10 +50,9 @@
     input_type: BUILD_ARTIFACTS
     local_path: /
     remote_path: /var/www/html/precisionscience
-    ignore: 
     login: root
     host: ps-staging
-    env_key: secure!aTokpY7gepM3K4SgVWeJyA==.9MPXqVZ/Un/r/Euqc5eQ4A==
+    env_key: secure!VXSJFV/ZWRUt5OZ038h3Cw==.xh8bEs96REpIoKOxcUdB0w==
     authentication_mode: ENV_KEY
     integration: digitalocean
     deployment_excludes:
