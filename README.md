@@ -66,6 +66,17 @@ Reference [admin experience](dev/screenshots/admin.md) documentation to review w
 ### Development process
 (Wordpress theme functionality)[https://developer.wordpress.org/themes/functionality/]
 
+####  Development setup
+- Follow Bedrock's docker devcontainer setup
+
+#### Staging setup
+- Set up a LEMP stack server on Digital Ocean
+- Use `config/scripts/nginxsetup.sh` to config
+  - it'll remove unneccessary files
+  - create a default host config
+  - and restart the server
+- Run `config/pipeline/staging.yml` through (Buddy)[https://buddy.works]
+
 ## Hosting
   __Client hosted - private details__
 
