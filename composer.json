@@ -1,27 +1,23 @@
 {
-  "name": "roots/bedrock",
+  "name": "precisionscience/ps2025_wordpress",
   "type": "project",
   "license": "MIT",
   "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
-  "homepage": "https://roots.io/bedrock/",
+  "license": "MIT",
+  "description": "WordPress starter theme with a modern development workflow",
+  "homepage": "https://130public.net/",
   "authors": [
     {
-      "name": "Scott Walkinshaw",
-      "email": "scott.walkinshaw@gmail.com",
-      "homepage": "https://github.com/swalkinshaw"
-    },
-    {
-      "name": "Ben Word",
-      "email": "ben@benword.com",
-      "homepage": "https://github.com/retlehs"
+      "name": "Jason Geiger",
+      "email": "jjgeiger@130public.net",
+      "homepage": "https://github.com/jasonjgeiger"
     }
   ],
   "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+    "wordpress"
   ],
   "support": {
-    "issues": "https://github.com/roots/bedrock/issues",
-    "forum": "https://discourse.roots.io/category/bedrock"
+    "issues": "https://github.com/Precision-Science/ps2025_theme/issues"
   },
   "repositories": [
     {
