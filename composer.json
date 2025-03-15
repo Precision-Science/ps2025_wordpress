@@ -35,7 +35,7 @@
     }
   ],
   "require": {
-    "php": "^8.1",
+    "php": "^8.2",
     "wp-cli/wp-cli-bundle": "*",
     "composer/installers": "^2.2",
     "vlucas/phpdotenv": "^5.5",
@@ -45,9 +45,9 @@
     "roots/wordpress": "^6.7.2",
     "roots/wp-config": "^1.0.0",
     "roots/wp-password-bcrypt": "^1.2.0",
-    "roots/acorn": "^4.1",
+    "roots/acorn": "^4.3",
     "htmlburger/carbon-fields": "^3.6",
-    "wp-graphql/wp-graphql": "^2.0.0",
+    "wp-graphql/wp-graphql": "^2.1",
     "precision-science/ps2025_theme": "dev-main"
   },
   "require-dev": {
