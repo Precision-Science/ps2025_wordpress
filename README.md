@@ -56,6 +56,7 @@ Reference [admin experience](dev/screenshots/admin.md) documentation to review w
 
 ### Development dependencies
   - Roots ecosystem
+    - Trellis
     - Bedrock
     - Sage
     - Accorn
@@ -67,7 +68,15 @@ Reference [admin experience](dev/screenshots/admin.md) documentation to review w
 (Wordpress theme functionality)[https://developer.wordpress.org/themes/functionality/]
 
 ####  Development setup
-- Follow Bedrock's docker devcontainer setup
+- Install Composer, Trellis, and Lima locally
+- Select you directory and run `trellis new domain.com`
+- cd into the directory and remove site
+- clone this repo into `domain.com \` as `site`
+- Getting the environment up and running 
+```
+trellis vm start
+trellis provision development
+```
 
 #### Staging setup
 - Set up a LEMP stack server on Digital Ocean
